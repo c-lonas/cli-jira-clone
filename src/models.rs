@@ -1,5 +1,7 @@
 #![allow(unused)]
 
+use std::collections::HashMap;
+
 
 pub enum Status {
     Open,
@@ -9,10 +11,10 @@ pub enum Status {
 }
 
 pub struct Epic {
-    name: String,
-    description: String,
-    status: Status,
-    stories: Vec<String>,
+    pub name: String,
+    pub description: String,
+    pub status: Status,
+    pub stories: Vec<String>,
 }
 
 impl Epic {
@@ -27,9 +29,9 @@ impl Epic {
 }
 
 pub struct Story {
-    name: String,
-    description: String,
-    status: Status,
+    pub name: String,
+    pub description: String,
+    pub status: Status,
 }
 
 impl Story {
@@ -46,8 +48,8 @@ impl Story {
 pub struct DBState {
     // This struct represents the entire db state which includes the last_item_id, epics, and stories
     // TODO: add fields (make sure the fields are public)
-    last_item_id: i32,
-    epics: Vec<Epic>,
-    stories: Vec<Story>,
+    pub last_item_id: i32,
+    pub epics: HashMap<u8, Epic>,
+    pub stories: HashMap<u8, Story>,
 
 }
