@@ -46,10 +46,8 @@ impl Story {
 }
 
 pub struct DBState {
-    // This struct represents the entire db state which includes the last_item_id, epics, and stories
-    // TODO: add fields (make sure the fields are public)
-    pub last_item_id: i32,
-    pub epics: HashMap<u8, Epic>,
-    pub stories: HashMap<u8, Story>,
+    
+    pub epics: HashMap<u32, Epic>,
+    pub stories: HashMap<u32, Story>,
 
 }
